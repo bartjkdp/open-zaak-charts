@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  open-zaak:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-12-14T19:39:52.199795716Z"
+    description: A Helm chart for Kubernetes
+    digest: e530c0067137e452ddcc6ad0fa323b86bf3fe4e6a7002c85f5b1512db40e69c4
+    name: open-zaak
+    type: application
+    urls:
+    - https://github.com/bartjkdp/open-zaak-charts/releases/download/open-zaak-0.1.0/open-zaak-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-12-14T19:39:52.002643398Z"
