@@ -14,6 +14,7 @@ helm upgrade --install postgresql bitnami/postgresql \
 Install Open Zaak with:
 
 ```bash
+cd charts/open-zaak
 helm upgrade --install open-zaak ./open-zaak \
     --set allowedHosts=open-zaak.gemeente.nl \
     --set settings.database.username=postgres \
