@@ -15,8 +15,9 @@ Install Open Zaak with:
 
 ```bash
 helm repo add open-zaak https://bartjkdp.github.io/open-zaak-charts/
-helm upgrade --install open-zaak/open-zaak ./open-zaak \
-    --set allowedHosts=open-zaak.gemeente.nl \
+helm upgrade --install open-zaak open-zaak/open-zaak \
+    --set settings.secretKey=SOME-RANDOM-SECRET \
+    --set settings.allowedHosts=open-zaak.gemeente.nl \
     --set settings.database.username=postgres \
     --set settings.database.password=SUPER-SECRET \
     --set settings.database.name=open-zaak \
