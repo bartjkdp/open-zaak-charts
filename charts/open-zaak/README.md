@@ -38,6 +38,9 @@ helm install open-zaak open-zaak/open-zaak \
 | `ingress.annotations` | Additional annotations on the API ingress | `{}` |
 | `ingress.hosts` | Ingress hosts | `"{open-zaak.gemeente.nl}"` |
 | `ingress.tls` | Ingress TLS settings | `"[]"` |
+| `persistence.enabled` | Enable persistency for application media | `false` |
+| `persistence.size` | The size of the application media persistent volume | `"1Gi"` |
+| `persistence.existingClaim` | Use an existing claim for application media | `""` |
 | `settings.allowedHosts` | A comma-separated list of hosts allowed by the application | `"open-zaak.gemeente.nl"` |
 | `settings.secretKey` | The secret key of the application | `"SOME-RANDOM-SECRET"` |
 | `settings.database.hostname` | The hostname of PostgreSQL | `"open-zaak-postgresql"` |
@@ -57,14 +60,14 @@ helm install open-zaak open-zaak/open-zaak \
 | `settings.cmis.mapperFile` | The CMIS mapper file | `""` |
 | `sentry.dsn` | The DSN for Sentry Logging | `""` |
 | `postgresql.persistence.enabled` | Enable PostgreSQL persistency | `false` |
-| `postgresql.persistence.size` | Configure PostgreSQL size | `1Gi` |
+| `postgresql.persistence.size` | Configure PostgreSQL size | `"1Gi"` |
 | `postgresql.persistence.existingClaim` | Use an existing persistent volume claim | `null` |
-| `postgresql.postgresqlDatabase` | The PostgreSQL database name | `open-zaak` |
-| `postgresql.postgresqlPassword` | The PostgreSQL administrative password | `SUPER-SECRET` |
+| `postgresql.postgresqlDatabase` | The PostgreSQL database name | `"open-zaak"` |
+| `postgresql.postgresqlPassword` | The PostgreSQL administrative password | `"SUPER-SECRET"` |
 | `redis.usePassword` | Use a Redis password | `false` |
 | `redis.cluster.enabled` | Enable Redis cluster | `false` |
 | `redis.persistence.existingClaim` | Use existing persistent volume claim for Redis | `""` |
 | `redis.master.persistence.enabled` | Enable persistency for Redis master | `false` |
-| `redis.master.persistence.size` | The size of the Redis master persistent volume | `1Gi` |
+| `redis.master.persistence.size` | The size of the Redis master persistent volume | `"1Gi"` |
 
 Check [values.yaml](./values.yaml) for all the possible configuration options.
