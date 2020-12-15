@@ -7,15 +7,19 @@ The Helm chart installs Open Zaak and by default the following dependencies usin
 
 ## Installation
 
-Install the chart with default settings as follows:
+First configure the Helm repository:
 
 ```bash
 helm repo add open-zaak https://bartjkdp.github.io/open-zaak-charts/
+helm repo update
+```
 
-helm upgrade --install open-zaak open-zaak/open-zaak \
-    --set settings.allowedHosts=open-zaak.gemeente.nl \
-    --set ingress.enabled=true \
-    --set ingress.hosts={open-zaak.gemeente.nl}
+Install the Helm chart with:
+
+helm install open-zaak open-zaak/open-zaak \
+    --set "settings.allowedHosts=open-zaak.gemeente.nl" \
+    --set "ingress.enabled=true" \
+    --set "ingress.hosts={open-zaak.gemeente.nl}"
 ```
 
 :warning: The default settings are unsafe for production usage. Configure proper secrets, enable persistency and consider High Availability (HA) for the database and the application.
