@@ -2,6 +2,6 @@
 
 This repository contains a Helm chart for [Open Zaak](https://github.com/open-zaak/open-zaak).
 
-For installation instructions and configuration options view:
+View the detailed installation instructions and configuration here:
 
 - [Open Zaak](./charts/open-zaak/README.md)
