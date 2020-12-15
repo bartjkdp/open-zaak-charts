@@ -13,11 +13,7 @@ Install the chart with default settings as follows:
 helm repo add open-zaak https://bartjkdp.github.io/open-zaak-charts/
 
 helm upgrade --install open-zaak open-zaak/open-zaak \
-    --set settings.secretKey=SOME-RANDOM-SECRET \
     --set settings.allowedHosts=open-zaak.gemeente.nl \
-    --set settings.database.username=open-zaak \
-    --set settings.database.password=SUPER-SECRET \
-    --set settings.database.name=open-zaak \
     --set ingress.enabled=true \
     --set ingress.hosts={open-zaak.gemeente.nl}
 ```
