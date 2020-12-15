@@ -10,10 +10,19 @@ data:
   DB_PORT: {{ .Values.settings.database.port | toString | quote }}
   DB_USER: {{ .Values.settings.database.username | toString | quote }}
   DB_NAME: {{ .Values.settings.database.name | toString | quote }}
+  CACHE_DEFAULT: {{ .Values.settings.cache.default | toString | b64enc | quote }}
+  CACHE_AXES: {{ .Values.settings.cache.axes | toString | b64enc | quote }}
   EMAIL_HOST: {{ .Values.settings.email.host | toString | quote }}
   {{- if .Values.settings.email.username }}
   EMAIL_USER: {{ .Values.settings.email.username | toString | quote }}
   {{- end }}
   {{- if .Values.settings.email.useTLS }}
-  EMAIL_USE_TLS: 'True'
+  EMAIL_USE_TLS: "True"
+  {{- end }}
+  JWT_EXPIRY: {{ .Values.settings.jwtExpiry | toString | quote }}
+  {{- if .Values.settings.cmis.enabled }}
+  CMIS_ENABLED: "True"
+  {{- end }}
+  {{- if .Values.settings.cmis.mapperFile }}
+  CMIS_MAPPER_FILE: {{ .Values.settings.cmis.mapperFile | toString | quote }}
   {{- end }}

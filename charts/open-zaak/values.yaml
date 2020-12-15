@@ -1,3 +1,7 @@
+tags:
+  postgresql: true
+  redis: true
+
 replicaCount: 1
 
 image:
@@ -74,18 +78,59 @@ settings:
   secretKey: SOME-RANDOM-SECRET
 
   database:
-    host: postgresql
+    host: open-zaak-postgresql
     port: 5432
-    username: open-zaak
+    username: postgres
     password: SUPER-SECRET
     name: open-zaak
 
   email:
     host: localhost
     port: 25
-    username: ''
-    password: ''
+    username: ""
+    password: ""
     useTLS: false
 
+  cache:
+    default: open-zaak-redis-master:6379/0
+    axes: open-zaak-redis-master:6379/0
+
   sentry:
-    dsn: ''
+    dsn: ""
+
+  jwtExpiry: 3600
+
+  cmis:
+    enabled: false
+    mapperFile: ""
+
+#######################
+# PostgreSQL subchart #
+#######################
+
+postgresql:
+  persistence:
+    enabled: false
+    size: 1Gi
+    existingClaim: null
+
+  postgresqlDatabase: open-zaak
+  postgresqlPassword: SUPER-SECRET
+
+##################
+# Redis subchart #
+##################
+
+redis:
+  usePassword: false
+
+  cluster:
+    enabled: false
+
+  persistence:
+    existingClaim: null
+
+  master:
+    persistence:
+      enabled: false
+      size: 1Gi
