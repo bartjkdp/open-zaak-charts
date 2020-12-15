@@ -16,6 +16,7 @@ helm repo update
 
 Install the Helm chart with:
 
+```bash
 helm install open-zaak open-zaak/open-zaak \
     --set "settings.allowedHosts=open-zaak.gemeente.nl" \
     --set "ingress.enabled=true" \
