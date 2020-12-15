@@ -2,8 +2,8 @@
 
 The Helm chart installs Open Zaak and by default the following dependencies using subcharts:
 
-- PostgreSQL
-- Redis
+- [PostgreSQL](https://github.com/bitnami/charts/tree/master/bitnami/postgresql)
+- [Redis](https://github.com/bitnami/charts/tree/master/bitnami/redis)
 
 ## Installation
 
@@ -22,7 +22,7 @@ helm upgrade --install open-zaak open-zaak/open-zaak \
     --set ingress.hosts={open-zaak.gemeente.nl}
 ```
 
-:warning: The default settings are unsafe for production. For production usage configure proper secrets, enable persistency and consider High Availability (HA) for the database and the application.
+:warning: The default settings are unsafe. For production configure proper secrets, enable persistency and consider High Availability (HA) for the database and the application.
 
 ## Configuration
 
@@ -60,5 +60,10 @@ helm upgrade --install open-zaak open-zaak/open-zaak \
 | `postgresql.persistence.existingClaim` | Use an existing persistent volume claim | `null` |
 | `postgresql.postgresqlDatabase` | The PostgreSQL database name | `open-zaak` |
 | `postgresql.postgresqlPassword` | The PostgreSQL administrative password | `SUPER-SECRET` |
+| `redis.usePassword` | Use a Redis password | `false` |
+| `redis.cluster.enabled` | Enable Redis cluster | `false` |
+| `redis.persistence.existingClaim` | Use existing persistent volume claim for Redis | `""` |
+| `redis.master.persistence.enabled` | Enable persistency for Redis master | `false` |
+| `redis.master.persistence.size` | The size of the Redis master persistent volume | `1Gi` |
 
 Check [values.yaml](./values.yaml) for all the possible configuration options.
