@@ -43,7 +43,7 @@ helm install open-zaak open-zaak/open-zaak \
 | `persistence.existingClaim` | Use an existing claim for application media | `""` |
 | `settings.allowedHosts` | A comma-separated list of hosts allowed by the application | `"open-zaak.gemeente.nl"` |
 | `settings.secretKey` | The secret key of the application | `"SOME-RANDOM-SECRET"` |
-| `settings.database.hostname` | The hostname of PostgreSQL | `"open-zaak-postgresql"` |
+| `settings.database.host` | The hostname of PostgreSQL | `"open-zaak-postgresql"` |
 | `settings.database.port` | The port of PostgreSQL | `5432` |
 | `settings.database.username` | The username of PostgreSQL | `"postgres"` |
 | `settings.database.password` | The password of PostgreSQL | `"SUPER-SECRET"` |
