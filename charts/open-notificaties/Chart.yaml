@@ -1,6 +1,6 @@
 apiVersion: v2
-name: open-zaak
-description: Productiewaardige API's voor Zaakgericht Werken
+name: open-notificaties
+description: API voor het routeren van notificaties
 
 type: application
 version: 0.3.0
@@ -17,3 +17,8 @@ dependencies:
     repository: https://charts.bitnami.com/bitnami
     tags:
       - redis
+  - name: rabbitmq
+    version: ~8.6.0
+    repository: https://charts.bitnami.com/bitnami
+    tags:
+      - rabbitmq
