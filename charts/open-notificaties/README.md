@@ -59,6 +59,9 @@ helm install open-notificaties open-zaak/open-notificaties \
 | `settings.email.useTLS` | Use TLS for connecting to SMTP server | `false` |
 | `settings.email.useTLS` | Use TLS for connecting to SMTP server | `false` |
 | `settings.sentry.dsn` | The DSN for Sentry Logging | `""` |
+| `settings.publisherBrokerUrl` | The URL to the publisher broker | `"amqp://guest:guest@open-notificaties-rabbitmq:5672/%2F"` |
+| `settings.celeryBrokerUrl` | The URL to the Celery broker | `"amqp://guest:guest@open-notificaties-rabbitmq:5672//"` |
+| `settings.celeryResultBackend` | The URL to the Celery result backend | `"amqp://guest:guest@open-notificaties-rabbitmq:5672//"` |
 | `postgresql.persistence.enabled` | Enable PostgreSQL persistency | `false` |
 | `postgresql.persistence.size` | Configure PostgreSQL size | `"1Gi"` |
 | `postgresql.persistence.existingClaim` | Use an existing persistent volume claim | `null` |
