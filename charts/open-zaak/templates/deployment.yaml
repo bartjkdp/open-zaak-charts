@@ -45,11 +45,19 @@ spec:
               containerPort: 8000
               protocol: TCP
           livenessProbe:
-            tcpSocket:
+            httpGet:
+              path: /
               port: http
+              httpHeaders:
+                - name: Host
+                  value: {{ include "open-zaak.fullname" . | quote }}
           readinessProbe:
-            tcpSocket:
+            httpGet:
+              path: /
               port: http
+              httpHeaders:
+                - name: Host
+                  value: {{ include "open-zaak.fullname" . | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
