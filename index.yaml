@@ -3,6 +3,27 @@ entries:
   open-zaak:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2020-12-20T13:17:02.587876948Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - postgresql
+      version: ~10.2.0
+    - name: redis
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - redis
+      version: ~12.2.2
+    description: A Helm chart for Kubernetes
+    digest: 090b50866419588424449298e615793bc07e2e6f8c29968d3e8c0404d3473e4e
+    name: open-zaak
+    type: application
+    urls:
+    - https://github.com/bartjkdp/open-zaak-charts/releases/download/open-zaak-0.2.3/open-zaak-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2020-12-20T13:06:43.255400706Z"
     dependencies:
     - name: postgresql
