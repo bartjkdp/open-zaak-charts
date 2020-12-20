@@ -51,6 +51,7 @@ spec:
               httpHeaders:
                 - name: Host
                   value: {{ include "open-zaak.fullname" . | quote }}
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
             httpGet:
               path: /
@@ -58,6 +59,7 @@ spec:
               httpHeaders:
                 - name: Host
                   value: {{ include "open-zaak.fullname" . | quote }}
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
