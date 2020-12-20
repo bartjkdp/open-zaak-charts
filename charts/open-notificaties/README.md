@@ -42,7 +42,7 @@ helm install open-notificaties open-zaak/open-notificaties \
 | `ingress.tls` | Ingress TLS settings | `"[]"` |
 | `persistence.enabled` | Enable persistency for application media | `false` |
 | `persistence.size` | The size of the application media persistent volume | `"1Gi"` |
-| `persistence.existingClaim` | Use an existing claim for application media | `""` |
+| `persistence.existingClaim` | Use an existing claim for application media | `null` |
 | `settings.allowedHosts` | A comma-separated list of hosts allowed by the application | `"open-notificaties.gemeente.nl"` |
 | `settings.secretKey` | The secret key of the application | `"SOME-RANDOM-SECRET"` |
 | `settings.database.host` | The hostname of PostgreSQL | `"open-notificaties-postgresql"` |
